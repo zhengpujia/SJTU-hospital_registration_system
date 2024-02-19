@@ -12,31 +12,31 @@ Python+Django+MySQL+Redis的医院挂号系统
 1.1版本添加功能：<br>
 患者：交通导航。<br>
 <div align="center">
-  <img src="https://github.com/zhengpujia/SJTU-CS3604/blob/main/picture/navigation1.png">
-  <img src="https://github.com/zhengpujia/SJTU-CS3604/blob/main/picture/navigation2.png">
+  <img src="https://github.com/zhengpujia/SJTU-hospital_registration_system/blob/main/picture/navigation1.png">
+  <img src="https://github.com/zhengpujia/SJTU-hospital_registration_system/blob/main/picture/navigation2.png">
 </div>
 <br>
 2.0版本添加功能：<br>
 患者：交通导航，新增根据经纬度导航。<br>
 <div align="center">
-  <img src="https://github.com/zhengpujia/SJTU-CS3604/blob/main/picture/navigation3.png">
+  <img src="https://github.com/zhengpujia/SJTU-hospital_registration_system/blob/main/picture/navigation3.png">
 </div>
 患者：展示挂号单,展示顺序为最近时间优先。<br>
 <div align="center">
-  <img src="https://github.com/zhengpujia/SJTU-CS3604/blob/main/picture/registration.png">
+  <img src="https://github.com/zhengpujia/SJTU-hospital_registration_system/blob/main/picture/registration.png">
 </div>
 <br>
 2.1版本添加功能：<br>
 管理员：增加查找数据功能。<br>
 <div align="center">
-  <img src="https://github.com/zhengpujia/SJTU-CS3604/blob/main/picture/admin_view.png">
+  <img src="https://github.com/zhengpujia/SJTU-hospital_registration_system/blob/main/picture/admin_view.png">
 </div>
 html风格美化，增加粒子动画<br>
 <br>
 3.0版本添加功能：<br>
 患者：增加就诊指南功能。<br>
 <div align="center">
-  <img src="https://github.com/zhengpujia/SJTU-CS3604/blob/main/picture/guide.png">
+  <img src="https://github.com/zhengpujia/SJTU-hospital_registration_system/blob/main/picture/guide.png">
 </div>
 医生：增加上班打卡、请假申请、出差申请、报销登记功能。<br>
 
