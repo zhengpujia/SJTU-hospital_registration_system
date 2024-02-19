@@ -1,7 +1,7 @@
 # hospital_registration_system
 Python+Django+MySQL+Redis的医院挂号系统
 <div align="center">
-  <img src="https://github.com/zhengpujia/SJTU-hospital_registration_system/picture/log_in.png">
+  <img src="https://github.com/zhengpujia/SJTU-hospital_registration_system/blob/main/picture/log_in.png">
 </div>
 
 1.0版本功能：<br>
