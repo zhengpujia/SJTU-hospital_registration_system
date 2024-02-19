@@ -1,0 +1,69 @@
+.PageFont {
+	top: 0pt;
+	left: 0pt;
+	width:1150pt;
+	height: 60px;
+	background-color: #b91616;
+	position: absolute;
+}
+.badge {
+	background-image: url("/static/images/sjtu.png"); 
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 200pt;
+	height: 30pt;
+	top: 5pt;
+	left: 10pt;
+}
+.sjtu{
+	position: absolute;
+	color: #ffffff;
+	top: 0pt;
+	left: 125pt;
+	height: 60pt;
+}
+.clock{
+	top: 150px;
+	left: 400px;
+    width: 600px;
+	height: 100px;
+	color: #000;
+    border-style: solid;
+    border-color: #b91616;
+    margin: 100px;
+	position: absolute;
+	text-align: center;
+}
+
+.Page1{
+	top:60px;
+	left: 0px;
+	height: 650px;
+	width: 1550px;
+	background-color: #e4e4e4;
+	position: absolute;
+}
+
+.logout {
+	margin-top: 7%;
+	display: flex;
+	justify-content: center;
+}
+
+.logout a {
+	width: 400px;
+	height: 60px;
+	line-height: 60px;
+	font-size: 26px;
+	font-weight: 600;
+	border: 3px solid #FFF;
+	border-radius: 28px;
+	text-align: center;
+	text-decoration: none;
+	color: #FFFFFF;
+	background-color: #b91616;
+    position: absolute;
+    left: 600px;
+    top: 500px;
+}

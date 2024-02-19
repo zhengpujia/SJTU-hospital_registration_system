@@ -1,0 +1,100 @@
+* {
+ margin: 0;
+ padding: 0;
+}
+
+body {
+ width: 100%;
+ margin: 0 auto;
+ min-width: 1000px;
+}
+
+.tap {
+ width: 100%;
+ background-color: rgb(242, 228, 228);
+}
+
+.content {
+ width: 100%;
+ height: 480px;
+ background-color: rgb(242, 228, 228);
+}
+.content dl{
+ display: flex;
+ justify-content: space-around;
+ background-color: rgb(242, 228, 228);
+}
+.content .yonghu {
+ top:100px;
+ text-decoration: none;
+ margin-left: 5px;
+}
+
+.content .yiliao {
+ position: relative;
+ top: 50px;
+ text-align: center;
+ font-size: 36px;
+ color:#333;
+ line-height: 36px;
+}
+
+.content dd {
+ margin-top: 120px;
+ border-radius: 5px;
+ border:rgb(242, 228, 228);
+ box-shadow: rgba(0, 0, 0, 0.15) 0 6px 8px 0;
+}
+.sjtu{
+	position: absolute;
+	color: #ffffff;
+	top: 12pt;
+	left: 125pt;
+	height: 60pt;
+	}
+
+.content dd a {
+ display: block;
+ width: 216px;
+ height: 58px;
+ padding-top: 138px;
+ font-size: 16px;
+ color: aliceblue;
+ text-align: center;
+ text-decoration: none;
+ background: #05a19a url(../images/icon1.png) center 57px no-repeat;
+}
+
+.content dd:nth-child(2) a {
+ background: #ee9f5f url(../images/icon2.png) center 57px no-repeat;
+}
+
+.content dd:nth-child(3) a {
+ background: #5299db url(../images/icon3.png) center 57px no-repeat;
+}
+.content dd:nth-child(4) a {
+ background: #cc485a url(../images/icon4.png) center 57px no-repeat;
+}
+.PageFont {
+	width:1320pt;
+	height: 60px;
+	background-color: #b91616;
+	}
+.badge {
+	background-image: url("/static/images/sjtu.png"); 
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 200pt;
+	height: 30pt;
+	top: 5pt;
+	left: 10pt;
+		}
+
+.logout{
+	position: absolute;
+	color: #ffffff;
+	top: 12pt;
+	right: 60pt;
+	height: 60pt;
+}

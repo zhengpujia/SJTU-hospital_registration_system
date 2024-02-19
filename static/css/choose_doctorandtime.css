@@ -1,0 +1,187 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  }
+  
+  body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: #4a4a4a;
+	background-color: rgb(242, 228, 228);
+	min-width: 1000px;
+  }
+  
+  .top h1 {
+	text-align: center;
+	margin: 50px 0;
+	color: #333;
+	font-size: 2.5rem;
+  }
+  
+  .box {
+	width: 70%;
+	max-width: 1500px;
+	margin: 20px auto;
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	padding: 20px;
+	overflow: hidden;
+  }
+  
+  .message {
+	margin: 30px 0;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+  }
+  
+  img {
+	width: 130px;
+	height: 130px;
+	margin: 15px;
+	border-radius: 50%; /* Circular image */
+  }
+  
+  .age {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	margin: 10px 30px;
+	flex-wrap: wrap; /* Wrap for smaller screens */
+  }
+  
+  .age span {
+	font-weight: 800;
+	font-size: 18px;
+  }
+  
+  .time {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: start;
+	background-color: #ffffff; /* Changed from green to white */
+	border-radius: 20px;
+	padding: 20px;
+	margin: 10px 150px;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .time dd {
+	background-color: #4a90e2; /* A nicer shade of blue */
+	color: #FFFFFF;
+	padding: 10px 20px;
+	margin: 10px 0;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+  }
+  
+  .time dd:hover {
+	background-color: #357ABD; /* Darken on hover */
+  }
+  
+  .time span {
+	font-size: 18px;
+	color: #707070;
+  }
+  
+  .time span a {
+	text-decoration: none;
+	color: #333;
+  }
+  
+  .time dt {
+	margin-top: 10px;
+	font-size: 17px;
+  }
+  
+  .gengduo {
+	font-size: 1.8rem;
+	text-decoration: none;
+	color: #707070;
+	position: absolute;
+	bottom: 10px;
+	right: 42%;
+  }
+  
+.PageFont {
+	width:1215pt;
+	height: 60px;
+	background-color: #b91616;
+}
+.badge {
+	background-image: url("/static/images/sjtu.png"); 
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 250pt;
+	height: 30pt;
+	top: 5pt;
+	left: 10pt;
+}
+.sjtu{
+	position: absolute;
+	color: #ffffff;
+	top: 12pt;
+	left: 125pt;
+	height: 60pt;
+}
+
+
+
+/* 调整图片大小和形状 */
+.doctorimg {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* 更新时间链接的样式 */
+a {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/* 不可用时间的样式 */
+a.not-available {
+    background-color: #bbb;
+    cursor: not-allowed;
+}
+
+/* 鼠标悬停效果 */
+a:hover {
+    background-color: #45a049;
+}
+  
+  @media screen and (max-width: 768px) {
+	.box, .time, .age {
+	  width: 80%;
+	  margin: 20px auto;
+	}
+	
+	.time, .age {
+	  flex-direction: column;
+	  align-items: center;
+	}
+  
+	.time dd, .time dt {
+	  margin: 10px 0;
+	}
+  
+	.gengduo {
+	  position: static;
+	  display: block;
+	  text-align: center;
+	  margin-top: 20px;
+	}
+  }
+  

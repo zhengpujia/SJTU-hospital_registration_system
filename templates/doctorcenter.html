@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/static/css/doctor_center.css" />
+		<script src="/static/js/doctorcenter.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="PageFont">
+			<div class="badge"></div>
+			<div class="sjtu"><p>校医院</p></div>
+		</div>
+		<div class="box">
+			<!--<div class="top">
+				<span><img src="/static/images/doctor.jpg"></span>
+			</div>-->
+			<div class="options">
+				<p><em>问候</em>{{ doctor_name }}医生</p>
+				<dl>
+					<dd><a href="/doctorshowregistration/">我的患者<img src="/static/images/right.png" ></a></dd>
+					<dd><a href="/doctorsignin/">上班打卡<img src="/static/images/right.png" ></a></dd>
+					<dd><a href="/doctoraskforleave/">请假申请<img src="/static/images/right.png" ></a></dd>
+					<dd><a href="/doctorbusiness/">出差申请<img src="/static/images/right.png" ></a></dd>
+					<dd><a href="/doctorreimbursementregistration/">报销登记<img src="/static/images/right.png" ></a></dd>
+				</dl>
+			</div>
+			<div class="logout">
+				<a href="/doctorlogin/">退出登录</a>
+			</div>
+		</div>
+	<!-- 在页面中添加一个粒子的背景效果 -->
+    <!-- 引入particles.js的CDN -->
+    <script src="https://cdn.staticfile.org/particles.js/2.0.0/particles.min.js"></script>
+    <!-- 创建一个用于显示粒子的div元素 -->
+    <div id="particles"></div>
+    <!-- 设置粒子的样式和配置 -->
+    <script>
+      // 设置粒子的div元素的宽度和高度为全屏
+      var particles = document.getElementById("particles");
+      particles.style.width = "100%";
+      particles.style.height = "100%";
+      // 调用particles.js的函数来创建粒子
+      particlesJS("particles", {
+        // 设置粒子的数量和颜色
+        particles: {
+          number: {
+            value: 100,
+          },
+          color: {
+            value: "#ffffff",
+          },
+          // 设置粒子的形状和大小
+          shape: {
+            type: "circle",
+            stroke: {
+              width: 0,
+              color: "#000000",
+            },
+          },
+          size: {
+            value: 3,
+            random: true,
+          },
+          // 设置粒子的移动速度和方向
+          move: {
+            speed: 3,
+            direction: "none",
+            random: true,
+            out_mode: "out",
+          },
+        },
+        // 设置粒子之间的连线
+        interactivity: {
+          events: {
+            onhover: {
+              enable: true,
+              mode: "grab",
+            },
+          },
+          modes: {
+            grab: {
+              distance: 140,
+              line_linked: {
+                opacity: 1,
+              },
+            },
+          },
+        },
+      });
+    </script>
+	</body>
+</html>

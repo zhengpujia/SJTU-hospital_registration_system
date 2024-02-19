@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>检查挂号信息</title>
+		<link rel="stylesheet" type="text/css" href="/static/css/confirm_registration.css" />
+	</head>
+	<body>
+		{% load static %}
+		<div class="PageFont">
+			<div class="badge"></div>
+			<div class="sjtu"><p>校医院</p></div>
+		</div>
+		<form class="login_box" method="POST" action="/confirmregistration/">
+			<h1 class="title">挂号信息</h1>
+			{% csrf_token %}
+			<input class="input_box" type="text" name="patient_name" value="{{ patient_name }}" placeholder="患者姓名" />
+			<input class="input_box" type="text" name="doctor_name" value="{{ doctor_name }}" readonly unselectable="on" />
+			<input class="input_box" type="text" name="registration_time" value="{{ registration_time }}" readonly unselectable="on" />
+			<input class="input_box" type="text" name="consultation_hours" value="{{ consultation_hours }}" readonly unselectable="on" />
+			<input class="input_box" type="text" name="illness" value="" placeholder="病情概要" />
+			<input class="input_box" type="text" name="address" value="{{ address }}" readonly unselectable="on" />
+			<input class="input_box" type="text" name="registration_price" value="{{ registration_price }}" readonly unselectable="on" />
+
+			<input class="input_box" type="text" name="doctor_id" value="{{ doctor_id }} " style = "display:none" />
+			<input class="input_box" type="text" name="patient_id" value="{{ patient_id }} " style = "display:none" />
+
+			<input class="button_box" type="submit" value="确认并支付" />
+		</form>
+	</body>
+</html>

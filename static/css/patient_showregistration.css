@@ -1,0 +1,103 @@
+body {
+	background-color: rgb(242, 228, 228);
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
+
+.login_box {
+	width: 600px;
+	background-color: #fff;
+	margin: auto;
+	margin-top: 150px;
+	border-radius: 5px;
+	overflow: hidden;
+
+}
+
+.title {
+	text-align: center;
+	font-size: 28px;
+	color: #000;
+	margin-top: 80px;
+	margin-bottom: 10px;
+	letter-spacing: 3px;
+	font-family: sans-serif;
+	margin-bottom: 60px;
+}
+
+.input_box {
+	width: 300px;
+	height: 30px;
+	padding-left: 10px;
+	margin-top: 10px;
+	margin-left: 50px;
+}
+
+.button_box {
+	width: 120px;
+	height: 35px;
+	margin-top: 50px;
+	margin-left: 140px;
+	border-radius: 5px;
+	background-color: #ffffff;
+	cursor: pointer;
+	color: #fff;
+}
+
+.logo_box {
+	position: absolute;
+	background-color: rgb(163, 205, 221);
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+	top: 100px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border: solid 5px #A68364;
+	text-align: center;
+}
+
+.logo_img {
+	height: 101px;
+	width: 101px;
+	border-radius: 100px;
+
+}
+.div1{
+	border: 2px solid #808080;
+	width: 555px;
+	height: 340px;
+	margin: 20px;
+	margin-top: 30px;
+}
+.div2{
+	border: 2px solid #DC143C;
+	width: 555px;
+	height: 340px;
+	margin: 20px;
+	margin-top: 30px;
+}
+.PageFont {
+	width:1215pt;
+	height: 60px;
+	background-color: #b91616;
+}
+.badge {
+	background-image: url("/static/images/sjtu.png"); 
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 250pt;
+	height: 30pt;
+	top: 15pt;
+	left: 10pt;
+}
+.sjtu{
+	position: absolute;
+	color: #ffffff;
+	top: 10pt;
+	left: 125pt;
+	height: 60pt;
+}

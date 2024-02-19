@@ -1,0 +1,195 @@
+<!-- search.html -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>查询结果</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/search.css" />
+  </head>
+  <body>
+    <div class="PageFont">
+      <div class="badge"></div>
+      <div class="sjtu"><p>校医院</p></div>
+    </div>
+    <div class="box">
+      <div class="tap1">
+        <a href="/guide/" style="margin-left: 20px;text-decoration:none;color: #008000; font-size: 20px;">返回上一页</a>
+        <a href="/patientcenter/" style="margin-left: 20px;text-decoration:none;color: #008000; font-size: 20px;">返回主页面</a>
+      </div>
+      <div class="container">
+        <h1>查询结果</h1>
+        <!-- 判断是否有查询结果 -->
+        {% if doctors %}
+        <!-- 有查询结果，显示一个表格 -->
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>科室名称</th>
+              <th>科室地址</th>
+              <th>医生姓名</th>
+              <th>医生性别</th>
+              <th>医生年龄</th>
+              <th>职位等级</th>
+              <th>挂号价格</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 遍历查询结果 -->
+            {% for doctor in doctors %}
+            <tr>
+              <td>{{ doctor.department.name }}</td>
+              <td>{{ doctor.department.address }}</td>
+              <td>{{ doctor.name }}</td>
+              <td>{{ doctor.sex }}</td>
+              <td>{{ doctor.age }}</td>
+              <td>{{ doctor.level }}</td>
+              <td>{{ doctor.registration_price }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <!-- 没有查询结果，显示提示信息 -->
+        <p>没有找到符合条件的医生，请重新输入。</p>
+        {% endif %}
+      </div>
+    </div>
+    <!-- 在页面中添加一个粒子的背景效果 -->
+    <!-- 引入particles.js的CDN -->
+    <script src="https://cdn.staticfile.org/particles.js/2.0.0/particles.min.js"></script>
+    <!-- 创建一个用于显示粒子的div元素 -->
+    <div id="particles"></div>
+    <!-- 设置粒子的样式和配置 -->
+    <script>
+      // 设置粒子的div元素的宽度和高度为全屏
+      var particles = document.getElementById("particles");
+      particles.style.width = "100%";
+      particles.style.height = "100%";
+      // 调用particles.js的函数来创建粒子
+      particlesJS("particles", {
+        // 设置粒子的数量和颜色
+        particles: {
+          number: {
+            value: 100,
+          },
+          color: {
+            value: "#ffffff",
+          },
+          // 设置粒子的形状和大小
+          shape: {
+            type: "circle",
+            stroke: {
+              width: 0,
+              color: "#000000",
+            },
+          },
+          size: {
+            value: 3,
+            random: true,
+          },
+          // 设置粒子的移动速度和方向
+          move: {
+            speed: 3,
+            direction: "none",
+            random: true,
+            out_mode: "out",
+          },
+        },
+        // 设置粒子之间的连线
+        interactivity: {
+          events: {
+            onhover: {
+              enable: true,
+              mode: "grab",
+            },
+          },
+          modes: {
+            grab: {
+              distance: 140,
+              line_linked: {
+                opacity: 1,
+              },
+            },
+          },
+        },
+      });
+    </script>
+    <!-- 给查询结果添加一些动态效果 -->
+    <!-- 查询结果容器 -->
+    <div id="search-result"></div>
+    <!-- ajax查询 -->
+    <script>
+      // 获取查询表单
+      var form = document.getElementById("search-form");
+      // 给查询表单添加提交事件监听器
+      form.addEventListener("submit", function (e) {
+        // 阻止表单默认提交行为
+        e.preventDefault();
+        // 获取用户输入的科室名称和医生姓名
+        var department = form.department.value;
+        var doctor = form.doctor.value;
+        // 创建ajax对象
+        var xhr = new XMLHttpRequest();
+        // 设置请求方法和地址
+        xhr.open(
+          "get",
+          "/search/?department=" + department + "&doctor=" + doctor
+        );
+        // 设置响应类型为json
+        xhr.responseType = "json";
+        // 设置请求成功的回调函数
+        xhr.onload = function () {
+          // 获取响应数据
+          var data = xhr.response;
+          // 获取查询结果容器
+          var result = document.getElementById("search-result");
+          // 清空查询结果容器
+          result.innerHTML = "";
+          // 判断是否有查询结果
+          if (data.length > 0) {
+            // 创建一个表格元素
+            var table = document.createElement("table");
+            // 创建表头行
+            var thead = document.createElement("tr");
+            // 创建表头单元格
+            var th1 = document.createElement("th");
+            var th2 = document.createElement("th");
+            // 设置表头单元格的内容
+            th1.textContent = "科室名称";
+            th2.textContent = "医生姓名";
+            // 将表头单元格添加到表头行
+            thead.appendChild(th1);
+            thead.appendChild(th2);
+            // 将表头行添加到表格
+            table.appendChild(thead);
+            // 遍历查询结果数据
+            for (var i = 0; i < data.length; i++) {
+              // 获取每条数据
+              var item = data[i];
+              // 创建表格行
+              var tr = document.createElement("tr");
+              // 创建表格单元格
+              var td1 = document.createElement("td");
+              var td2 = document.createElement("td");
+              // 设置表格单元格的内容
+              td1.textContent = item.department;
+              td2.textContent = item.doctor;
+              // 将表格单元格添加到表格行
+              tr.appendChild(td1);
+              tr.appendChild(td2);
+              // 将表格行添加到表格
+              table.appendChild(tr);
+            }
+            // 将表格添加到查询结果容器
+            result.appendChild(table);
+          } else {
+            // 没有查询结果，显示提示信息
+            result.textContent = "没有找到符合条件的医生，请重新输入。";
+          }
+        };
+        // 发送请求
+        xhr.send();
+      });
+    </script>
+  </body>
+</html>

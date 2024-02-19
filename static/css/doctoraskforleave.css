@@ -1,0 +1,108 @@
+.PageFont {
+    top: 0pt;
+    left: 0pt;
+	width:1150pt;
+	height: 60px;
+	background-color: #b91616;
+    position: absolute;
+}
+.badge {
+	background-image: url("/static/images/sjtu.png"); 
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 200pt;
+	height: 30pt;
+	top: 5pt;
+	left: 10pt;
+}
+.sjtu{
+	position: absolute;
+	color: #ffffff;
+	top: 12pt;
+	left: 125pt;
+	height: 60pt;
+}
+/*通用样式*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/*页面背景色*/
+body {
+    width: 100%;
+    margin: 0 auto;
+    min-width: 1000px;
+    background-color: rgb(242, 228, 228);
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+/*标题样式*/
+h1, h2 {
+    color: #333333;
+    text-align: center;
+}
+
+/*表单容器*/
+.ns-container {
+    position: absolute;
+    width: 500px;
+    height: 450px;
+    top: 150px;
+    left: 50%;
+    margin-left: -250px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/*表单元素样式*/
+.layui-form-item {
+    margin-bottom: 20px;
+}
+
+.layui-form-label {
+    width: 100px;
+    text-align: right;
+}
+
+.layui-input-block {
+    margin-left: 120px;
+}
+
+.layui-input, .layui-select {
+    width: 300px;
+    height: 40px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.layui-input:focus, .layui-select:focus {
+    border-color: #66ccff;
+    outline: none;
+}
+
+.layui-btn {
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #bec3c6;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.layui-btn:hover {
+    background-color: #bec3c6;
+}
+
+.layui-btn:active {
+    background-color: #bec3c6;
+}

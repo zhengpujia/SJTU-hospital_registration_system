@@ -1,0 +1,53 @@
+.box {
+	width: 700px;
+	height: 50px;
+}
+.input_box {
+	width: 300px;
+	height: 30px;
+	padding-left: 10px;
+	margin-top: 20px;
+	margin-left: 40px;
+}
+
+.button_box {
+	width: 120px;
+	height: 35px;
+	margin-top: 5px;
+	margin-left: 5px;
+	border-radius: 5px;
+	background-color: #d98164;
+	cursor: pointer;
+	color: #fff;
+}
+
+.tap p {
+	font-size: 38px;
+	font-weight: 600;
+	text-align: center;
+	margin-top: 5%;
+}
+
+.tap a {
+	top: 25px;
+	left: 125px;
+	padding: 3px 2px;
+	color: #FFFFFF;
+	font-weight: 600;
+	text-decoration: none;
+	background-color: #c62210;
+	line-height: 41px;
+	text-align: center;
+	border: 1px solid #FFFFFF;
+	border-radius: 6px;
+}
+
+#luxian{
+	margin-top: 20%;
+}
+#luxian span{
+	display: block;
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 8%;
+}

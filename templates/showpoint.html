@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6e39a263cd9f23b4d1260ee347683cdd {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    <div class="box" style="top:30px; left:100px; position: fixed; background-color:transparent; z-index: 999;">
+        <div class="tap">
+            <a href="/patientcenter/" style="border: 2px solid #040000; background-color:#FFFFFF;">返回首页</a>
+        </div>
+        <form id="luxian" method="POST" action="/traffic/">
+            <div>
+                {% csrf_token %}
+                <input class="input_box" type="text" name="num" placeholder="位置序号" />
+                <input class="input_box" type="text" name="lon" placeholder="经度" />
+                <input class="input_box" type="text" name="lat" placeholder="纬度" />
+                <input class="button_box" type="submit" value="确认" />
+            </div>
+        </form>
+    </div>
+    <div class="folium-map" id="map_6e39a263cd9f23b4d1260ee347683cdd" ></div>
+    
+</body>
+<script>
+    
+    
+            var map_6e39a263cd9f23b4d1260ee347683cdd = L.map(
+                "map_6e39a263cd9f23b4d1260ee347683cdd",
+                {
+                    center: [31.024075697, 121.43663227],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 16,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d9356e79093c4665a222ec17f164eae7 = L.tileLayer(
+                "http://webst02.is.autonavi.com/appmaptile?style=6\u0026x={x}\u0026y={y}\u0026z={z}",
+                {"attribution": "default", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_6e39a263cd9f23b4d1260ee347683cdd);
+        
+    
+                var lat_lng_popup_18682eebc459454988a6cf2917ba0795 = L.popup();
+                function latLngPop(e) {
+                    lat_lng_popup_18682eebc459454988a6cf2917ba0795
+                        .setLatLng(e.latlng)
+                        .setContent("Latitude: " + e.latlng.lat.toFixed(4) +
+                                    "<br>Longitude: " + e.latlng.lng.toFixed(4))
+                        .openOn(map_6e39a263cd9f23b4d1260ee347683cdd);
+                    }
+                map_6e39a263cd9f23b4d1260ee347683cdd.on('click', latLngPop);
+            
+    
+            var marker_cluster_6645e0c858844310a7bfe96f49548a73 = L.markerClusterGroup(
+                {}
+            );
+            map_6e39a263cd9f23b4d1260ee347683cdd.addLayer(marker_cluster_6645e0c858844310a7bfe96f49548a73);
+        
+    
+            var marker_431b91d8ed92635ff3bc06d59126bae1 = L.marker(
+                [31.024075697, 121.43663227],
+                {"color": "red"}
+            ).addTo(marker_cluster_6645e0c858844310a7bfe96f49548a73);
+        
+    
+        var popup_c3a5226e06dbff98cbf9b46f2a0a10b7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_96ed2894d4851193ae546cf256e176b3 = $(`<div id="html_96ed2894d4851193ae546cf256e176b3" style="width: 100.0%; height: 100.0%;">1:东下院</div>`)[0];
+                popup_c3a5226e06dbff98cbf9b46f2a0a10b7.setContent(html_96ed2894d4851193ae546cf256e176b3);
+            
+        
+
+        marker_431b91d8ed92635ff3bc06d59126bae1.bindPopup(popup_c3a5226e06dbff98cbf9b46f2a0a10b7)
+        ;
+
+        
+    
+    
+            var marker_b61cad5c4b65eb75d629166c8dd34f66 = L.marker(
+                [31.0269309351, 121.42602682],
+                {"color": "red"}
+            ).addTo(marker_cluster_6645e0c858844310a7bfe96f49548a73);
+        
+    
+        var popup_f62ac6e4c5fbeeccdadd84d9abaf9e95 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f818a0afbd2ad7e5654eaf3151abe988 = $(`<div id="html_f818a0afbd2ad7e5654eaf3151abe988" style="width: 100.0%; height: 100.0%;">2:霍体</div>`)[0];
+                popup_f62ac6e4c5fbeeccdadd84d9abaf9e95.setContent(html_f818a0afbd2ad7e5654eaf3151abe988);
+            
+        
+
+        marker_b61cad5c4b65eb75d629166c8dd34f66.bindPopup(popup_f62ac6e4c5fbeeccdadd84d9abaf9e95)
+        ;
+
+        
+    
+    
+            var marker_047fc4bbcf3e54797f9aad5392115610 = L.marker(
+                [31.0252684663, 121.4420986175],
+                {"color": "red"}
+            ).addTo(marker_cluster_6645e0c858844310a7bfe96f49548a73);
+        
+    
+        var popup_7a9139ebd4202bf85ea3b4cf969abe4f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_32da8cc5bf44d214cfc22b9f8c398a15 = $(`<div id="html_32da8cc5bf44d214cfc22b9f8c398a15" style="width: 100.0%; height: 100.0%;">3:电院</div>`)[0];
+                popup_7a9139ebd4202bf85ea3b4cf969abe4f.setContent(html_32da8cc5bf44d214cfc22b9f8c398a15);
+            
+        
+
+        marker_047fc4bbcf3e54797f9aad5392115610.bindPopup(popup_7a9139ebd4202bf85ea3b4cf969abe4f)
+        ;
+
+        
+    
+</script>
+</html>

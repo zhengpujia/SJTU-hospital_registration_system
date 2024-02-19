@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>请假申请</title>
+    <link rel="stylesheet" href="/static/css/doctoraskforleave.css" />
+    <style>
+      /*表单容器*/
+      .ns-container {
+        position: absolute;
+        width: 500px;
+        height: 450px;
+        top: 150px;
+        left: 50%;
+        margin-left: -250px;
+        padding: 20px;
+        box-sizing: border-box;
+        border: 1px solid #cccccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="PageFont">
+      <div class="badge"></div>
+      <div class="sjtu"><p>校医院</p></div>
+    </div>
+    <div class="layui-row">
+      <blockquote class="layui-elem-quote">
+        <h2>报销申请</h2>
+      </blockquote>
+      <table id="grdNoticeList" lay-filter="grdNoticeList"></table>
+    </div>
+    <div class="ns-container">
+      <div class="tap1">
+        <a href="/doctorcenter/" style="margin-left: 20px;text-decoration:none;color: #008000; font-size: 20px;">返回页面</a>
+      </div>
+      <h1 style="text-align: center; margin-bottom: 20px">报销申请单</h1>
+      {% load static %}
+      <form class="layui-form" method='post' style="border: 2px solid #808080;" action="/doctoraskforleave/">
+        {% csrf_token %}
+        <!--基本信息-->
+        <!--<div class="layui-form-item">
+            <label class="layui-form-label">部门</label>
+            <div class="layui-input-block">
+                <div class="layui-col-md12" style="padding-top: 10px;">
+                    研发部
+                </div>
+ 
+            </div>
+        </div>-->
+        <div class="layui-form-item">
+          <label class="layui-form-label">申请人</label>
+          <div class="layui-input-block">
+            <div class="layui-col-md12" style="padding-top: 10px">{{name}}</div>
+          </div>
+        </div>
+
+        <!--请假时长日期选择框-->
+        
+        <div class="layui-form-item">
+          <label class="layui-form-label">报销金额</label>
+          <div class="layui-input-block layui-col-space5">
+            <input
+              name="leaveRange"
+              type="text"
+              class="layui-input"
+              id="daterange"
+              placeholder=""
+            />
+            <input id="startTime" name="startTime" type="hidden" />
+            <input id="endTime" name="endTime" type="hidden" />
+          </div>
+        </div>
+
+        <!--请假事由-->
+        <div class="layui-form-item">
+          <label class="layui-form-label">报销事由</label>
+          <div class="layui-input-block layui-col-space5">
+            <input
+              name="reason"
+              type="text"
+              lay-verify="required|mobile"
+              placeholder=""
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+        </div>
+
+        <div class="layui-form-item" style="text-align: center">
+          <button
+            class="layui-btn"
+            type="submit"
+            lay-submit
+            lay-filter="sub"
+            onclick="alert('已提交表单!')"
+          >
+            立即申请
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+
+/* 设置表格的边框和间距 */
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    animation: fade-in 1s;
+  }
+  
+  /* 设置表格单元格的边框和内边距 */
+  td, th {
+    border: 1px solid #cccccc;
+    padding: 10px;
+  }
+  
+  /* 设置表头单元格的背景色和字体加粗 */
+  th {
+    background-color: #eeeeee;
+    font-weight: bold;
+  }
+  /* 定义淡入的动画关键帧 */
+  @keyframes fade-in {
+    /* 开始时透明度为0 */
+    from {
+      opacity: 0;
+    }
+    /* 结束时透明度为1 */
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* 给按钮添加一个放大的动画效果 */
+  button {
+    /* 定义动画的名称和持续时间 */
+    animation: zoom-in 0.5s;
+  }
+  
+  /* 定义放大的动画关键帧 */
+  @keyframes zoom-in {
+    /* 开始时缩放比例为1 */
+    from {
+      transform: scale(1);
+    }
+    /* 结束时缩放比例为1.2 */
+    to {
+      transform: scale(1.2);
+    }
+  }
+  
+  /* 给输入框添加一个高亮的效果 */
+  input:focus {
+    /* 设置边框颜色为黄色 */
+    border-color: yellow;
+    /* 设置阴影颜色为黄色 */
+    box-shadow: inset 0 0 5px yellow;
+  }
+  
+  body {
+    width: 100%;
+    margin: 0 auto;
+    min-width: 1000px;
+    background-color: rgb(242, 228, 228);
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+  .PageFont {
+	width:auto;
+	height: 60px;
+	background-color: #b91616;
+}
+
+.badge {
+	background-image: url("/static/images/sjtu.png"); 
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 200pt;
+	height: 30pt;
+	top: 5pt;
+	left: 10pt;
+}
+.sjtu{
+	position: absolute;
+	color: #ffffff;
+	top: 5pt;
+	left: 125pt;
+	height: 60pt;
+}
+
+.box{
+    width: 1200px;
+	background-color: #fff;
+	margin: auto;
+	margin-top: 50px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+
+.tap1 {
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+}
+
+.container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+}

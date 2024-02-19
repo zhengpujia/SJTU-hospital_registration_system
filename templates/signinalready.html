@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>上班打卡</title>
+		<div class="badge"></div>
+		<link rel="stylesheet" type="text/css" href="/static/css/signinalready.css" />
+	</head>
+	<body>
+		<div class="PageFont">
+			<div class="badge"></div>
+			<div class="sjtu"><p>校医院</p ></div>
+			<div class="logout"><a href="/doctorlogin/" style="color: white;">退出登录</a></div>
+		</div>
+		<div class="content">
+			<div class="yonghu">欢迎您,{{ doctor_name }}</div>
+			<div class="yiliao">今日已打卡</div>
+			<dl>
+				<dd><a href="/doctorcenter/">返回首页</a></dd>
+			</dl>
+		</div>
+	</body>
+</html>

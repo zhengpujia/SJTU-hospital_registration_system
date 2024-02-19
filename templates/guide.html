@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>就诊指南</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/guide.css" />
+    <!-- 引入jQuery库 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- 引入轮播图插件 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/7.0.8/swiper-bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.bootcdn.net/ajax/libs/Swiper/7.0.8/swiper-bundle.min.css"
+    />
+    <!-- 引入百度地图API -->
+    <script
+      type="text/javascript"
+      src="http://api.map.baidu.com/api?v=2.0&ak=nSxiPohfziUaCuONe4ViUP2N"
+    ></script>
+  </head>
+  <body>
+    <div class="PageFont">
+      <div class="badge"></div>
+      <div class="sjtu"><p>校医院</p></div>
+    </div>
+    <div class="box">
+      <div class="tap1">
+        <a href="/patientcenter/" style="margin-left: 20px;text-decoration:none;color: #008000; font-size: 20px;">返回页面</a>
+      </div>
+      <div class="tap2">
+        <h2>就诊指南</h2>
+              <!-- 段落 -->
+      <p>
+        欢迎来到校医院网站，这里是你的就诊指南，你可以在这里了解我们的就诊流程、医院位置、科室信息和医生信息，也可以在线预约挂号和查询结果，我们将竭诚为你提供优质的医疗服务。
+      </p>
+      </div>
+      <div class="lunbo">
+        <!-- 轮播图容器 -->
+        <div class="swiper-container">
+          <!-- 轮播图内容 -->
+          <div class="swiper-wrapper">
+            <!-- 每个轮播图项目 -->
+            <div class="swiper-slide">
+              <img src="../static/images/news1.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="../static/images/news2.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="../static/images/news3.jpg" />
+            </div>
+          </div>
+          <!-- 轮播图分页器 -->
+          <div class="swiper-pagination"></div>
+          <!-- 轮播图前进后退按钮 -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+      <div class="chaxun">
+        <!-- 查询表单 -->
+        <!-- 给查询表单添加一些表单验证 -->
+      <form id="search-form" action="/search/" method="get">
+        <label for="department">科室名称：</label>
+        <input type="text" 
+        id="department" 
+        name="department" 
+        placeholder="科室名称" 
+        requiredpattern="[\u4e00-\u9fa5a-zA-Z0-9]+" 
+        title="请输入中文或者英文或者数字"
+        />
+        <label for="doctor">医生姓名：</label>
+        <input type="text"
+        id="doctor"
+        name="doctor"
+        placeholder="医生姓名"
+        required
+        pattern="[\u4e00-\u9fa5a-zA-Z0-9]+"
+        title="请输入中文或者英文或者数字"
+        />
+        <button type="submit">查询</button>
+  <!-- 查询结果 -->
+</form>
+      </div>
+        <div class="zhinan">
+          <h2>就诊流程</h2>
+          <ol>
+            <li>登录本网站，选择科室或医生，预约挂号。</li>
+            <li>到达医院，凭借预约信息，在自助机或挂号窗口取号。</li>
+            <li>按照导诊屏幕或工作人员指引，到达相应的诊室等候就诊。</li>
+            <li>
+              就诊结束后，根据医生开具的处方或检查单，在药房或检验科缴费取药或检查。
+            </li>
+            <li>
+              如需复诊或转诊，请咨询医生或工作人员，或再次登录本网站预约。
+            </li>
+          </ol>
+        </div>
+
+        <div class="ditu">
+          <h2>医院位置</h2>
+          <!-- 地图容器 -->
+          <div id="map" style="width: 600px; height: 400px"></div>
+          <!-- 地图脚本 -->
+          <script type="text/javascript">
+            // 创建地图实例
+            var map = new BMap.Map("map");
+            // 创建点坐标
+            var point = new BMap.Point(121.438869, 31.024363);
+            // 初始化地图，设置中心点坐标和地图级别
+            map.centerAndZoom(point, 15);
+            // 添加标注
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+            // 添加信息窗口
+            var infoWindow = new BMap.InfoWindow(
+              "校医院位于2号门附近、9号楼前、南区体育场以南，校园巴士有校医院站点"
+            );
+            marker.addEventListener("click", function () {
+              map.openInfoWindow(infoWindow, point);
+            });
+          </script>
+        </div>
+        <div class="tishi">
+          <p>注：如果需要更多服务请询问现场工作人员!</p>
+        </div>
+        <div class="others">
+          <h2>常见问题</h2>
+          <table>
+            <tr>
+              <td>问题</td>
+              <td>答案</td>
+            </tr>
+            <tr>
+              <td>如何预约挂号？</td>
+              <td>
+                您可以在本网站的首页或就诊指南模块，选择科室或医生，填写个人信息，提交预约申请。
+              </td>
+            </tr>
+            <tr>
+              <td>如何取消预约？</td>
+              <td>
+                您可以在本网站的个人中心模块，查看您的预约记录，选择需要取消的预约，点击取消按钮。
+              </td>
+            </tr>
+            <tr>
+              <td>如何修改个人信息？</td>
+              <td>
+                您可以在本网站的个人中心模块，点击修改个人信息按钮，修改您的姓名、性别、年龄、电话等信息。
+              </td>
+            </tr>
+            <tr>
+              <td>如何查询就诊记录？</td>
+              <td>
+                您可以在本网站的个人中心模块，查看您的就诊记录，包括就诊时间、科室、医生、诊断、处方等信息。
+              </td>
+            </tr>
+            <tr>
+              <td>如何联系医生？</td>
+              <td>
+                您可以在本网站的个人中心模块，查看您的就诊记录，点击联系医生按钮，发送您的问题或反馈。
+              </td>
+            </tr>
+          </table>
+          <h2>友情链接</h2>
+          <ul>
+            <li><a href="https://www.sjtu.edu.cn/">上海交通大学</a></li>
+            <li><a href="https://www.jwc.sjtu.edu.cn/">教务处</a></li>
+          </ul>
+        </div>
+                      <!-- 尾部 -->
+                      <footer>
+                        <!-- 版权信息 -->
+                        <p> </p>
+                      </footer>
+      </div>
+    </div>
+    <script>
+      // 获取轮播图容器
+      const swiper = new Swiper(".swiper-container", {
+        // 设置自动播放
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        // 设置循环
+        loop: true,
+        // 设置切换速度
+        speed: 1000,
+        // 设置分页器
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        // 设置前进后退按钮
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+      // 获取配置选项
+      const { autoplay, loop, speed, pagination, navigation } = swiper.params;
+
+      // 添加事件监听
+      swiper.on("slideChange", () => {
+        // 使用模板字符串拼接选择器
+        console.log(`当前轮播图的索引是：${swiper.activeIndex}`);
+      });
+    </script>
+    <!-- 在页面中添加一个粒子的背景效果 -->
+    <!-- 引入particles.js的CDN -->
+    <script src="https://cdn.staticfile.org/particles.js/2.0.0/particles.min.js"></script>
+    <!-- 创建一个用于显示粒子的div元素 -->
+    <div id="particles"></div>
+    <!-- 设置粒子的样式和配置 -->
+    <script>
+      // 设置粒子的div元素的宽度和高度为全屏
+      var particles = document.getElementById("particles");
+      particles.style.width = "100%";
+      particles.style.height = "100%";
+      // 调用particles.js的函数来创建粒子
+      particlesJS("particles", {
+        // 设置粒子的数量和颜色
+        particles: {
+          number: {
+            value: 100,
+          },
+          color: {
+            value: "#ffffff",
+          },
+          // 设置粒子的形状和大小
+          shape: {
+            type: "circle",
+            stroke: {
+              width: 0,
+              color: "#000000",
+            },
+          },
+          size: {
+            value: 3,
+            random: true,
+          },
+          // 设置粒子的移动速度和方向
+          move: {
+            speed: 3,
+            direction: "none",
+            random: true,
+            out_mode: "out",
+          },
+        },
+        // 设置粒子之间的连线
+        interactivity: {
+          events: {
+            onhover: {
+              enable: true,
+              mode: "grab",
+            },
+          },
+          modes: {
+            grab: {
+              distance: 140,
+              line_linked: {
+                opacity: 1,
+              },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
