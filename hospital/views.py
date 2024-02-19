@@ -141,12 +141,12 @@ class ChooseDoctorAndTimeView(View):
                       {'department_name': department_name, 'doctor_time_number_list': doctor_time_number_list,
                        'department_id': department_id, 'tomorrow': tomorrow})
 
-# 支付宝公钥
+# 支付宝公钥 修改为你的
 alipay_public_key = '-----BEGIN PUBLIC KEY-----\n'\
 +'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoURjWSKmxPhVCifg/rchD11TSMkttEbNurfWVQB1HedkdH0wNkJcZZTJQZ4Z3cCoLjkeG9vIsFuEjEOyC+uJLrf+iktC4W99YuLHPwrcntPs2qqBwfMpjzdZgFS3gPbnjM4fZ0JB4V1AUdNd4YDCOW9prTfcoFse1Dce5Mov30IrFyDX2BAdj7CBMzbHq/5m2dk8zu9Qy8TOYRaJlycxPGTwBkBGFxQuxgbAtk0CNGtGLaYGH+j3ycPlkGWymSZFw2Xf9iCo63+qIwGt39zpai3TV45E0EF3kjYfR3P74qVQ41hWSei9bn/gSccOh8ohv4vRyQv3KwBoLh3bGeMKTQIDAQAB'\
 +'\n-----END PUBLIC KEY-----'
 
-# 应用私钥
+# 应用私钥 修改为你的
 my_private_key = '-----BEGIN RSA PRIVATE KEY-----\n'\
 +'MIIEowIBAAKCAQEAwZBaxmwDkDoISiwC7vMMn/CD2vrgAM/Gfq6XPCbaRXNNu57R3lXpc/o7zqr16Hv2XPR4Ixcl7nQZkOq6lu4mD6ks39dmFuXdc5OhRvplxELBeyjg+GLfoRBsEykJykDIVWJt57SFRWTnsYOkUDQt45kxtEaGK/WkzDq32OJRLjNms2xK0CzYJ6ojuAPLZ9oDAwGW5lq75AaXA7Q9iuyKeDmsgV9zkmzyc3g7Q+SVHsFcqz4l0V5mWTkjMDT0TGyamypgChVZTwobwQ37RTkoVjBnPKyojsMYluD3MzZ0d910o3PJ6SIjpKktCDGfbc7TFjAK4WheKMDcm7dPG9cK+QIDAQABAoIBAHy7gUOMJ1+xhdYGNn20sdX/L3jVYbQkME1CRMLGZrGKc/ULi0IzKpVKE3BCSuTdvQx5nVE/gXn/5tmz6TmJjY1Z/0jfjTIEPohUAgGzKhEm03eCCDcHwAQSiRJvx5dF19Lt8tT1R0xIkeWaZzAn78pS1ezN5Xg+e0wAKqjgbl/OLuYsvf/hNpa0uVAFhgPBAtY9Zq+AZHtL8lkSzJes2+znaqAQjIBbQTZbktgue69l6vNG5FeHU5qXtyky6uQvchybIZ+SvMQuXo+RQHFhQYXqv9ByRzBr02N433svCyRDduZgESdZ5qYnVe+UhRbfozNs0WMAJiTm1X5QYKijeOECgYEA+mS8cO7ww0ty8gKt12nVOqOzVIQDq/pJ01jz5dUUwO1oAHjH3+KAK8ony5PBSqprr6Q1w1xrpCPOOrMzIF+fNUXREE6AxdwJNineTeU0N5G4e9pUaVQxSBHA3DPVViFqAz7tna2m3xCepZt/hrS2vLWLg2lsQOKwksK0WGKU3GsCgYEAxeXehon/qs3jyMl3w+1LTTO1R36qi3QWluzRR/u2yh0OiO1Rt8LjNpNqFRQTdVYEJKeurEY57csM0bDJQk2IpEEL7PuEf4ZVZ8LU/kuwo+jQJNSJFSsIgTyNcQzFzWGQhSrGI6cF09RO1RHyzswsDevFnxYdU2kxDlB3HPqzTysCgYBGpcORbalawN/2rpDUFZVHDUcc0n6iuGS6EAAI2d0YLiPI9ksWvTaCpHAj/VVtNrZZgVB2BY6NaljWsRb8zF4ETuWU30FwEgw7TwbdHY1lHGVb9JcafNnGxtOOjcVkntrlfYzXj1Zk27CXc09A954TknmBo24axJsjXXI6+d2cbwKBgCSxDQQW2/9YMy6MJBeAjKCgwLCjzI0UlgefmuHkyqxInORIVAllKel5hYao9T6hFx2QtXMdhioPpq3OQFJ5u6bwpHxo2dUnG/ikCAeqEvMg/E6H1W7GTspfZr4aJyaAO2JlXt1HX246A++/ZyxucJCYMUjguck4TK8hviPyW4KHAoGBANBTkxV6oxO52OBESGp8yYXiePW/Mu0+y0gQj8AWCvUI7Kdot0EGnXkHEkVDbCeK6vPA6c6Pn/LSbDc35zqNJcXPbk4T7duj6PnWl37hPr6MdHxj0wYD6eD1khRyqpRCTqWv79t+b5wEYfzW5fsHy9+BmtN2liSifyqZ+CJeRt26'\
 +'\n-----END RSA PRIVATE KEY-----'
