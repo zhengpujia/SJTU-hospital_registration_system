@@ -1,5 +1,8 @@
 # hospital_registration_system
 Python+Django+MySQL+Redis的医院挂号系统
+<div align="center">
+  <img src="https://github.com/zhengpujia/SJTU-CS3604/blob/main/picture/log_in.png">
+</div>
 
 1.0版本功能：<br>
 患者：登录、注册、挂号（选择科室、选择医生、选择时间、填写病情、支付宝支付）、展示挂号单。<br>
