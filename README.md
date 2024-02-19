@@ -36,3 +36,6 @@ html风格美化，增加粒子动画<br>
   <img src="https://github.com/zhengpujia/SJTU-CS3604/blob/main/picture/guide.png">
 </div>
 医生：增加上班打卡、请假申请、出差申请、报销登记功能。<br>
+
+ps: 底层框架参考自 https://github.com/csl30003/hospital-registration-system.
+
